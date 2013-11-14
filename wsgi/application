@@ -13,4 +13,10 @@ except:
     pass
 
 import django.core.handlers.wsgi
+
+# This is required to load libsatyr.so correctly
+# OpenShift does not seem to provide any writable library path
+# and LD_LIBRARY_PATH env variable is already stolen by PostgreSQL
+os.chdir(os.path.join(os.environ["OPENSHIFT_FAF_ROOT"], "usr", "lib64"))
+
 application = django.core.handlers.wsgi.WSGIHandler()
