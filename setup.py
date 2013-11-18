@@ -3,7 +3,7 @@
 from setuptools import setup
 
 REQUIRES = ['Django <= 1.4',
-            'python-fedora',
+            #'python-fedora',
             'argparse',
             'bunch',
             'backports.ssl_match_hostname',
