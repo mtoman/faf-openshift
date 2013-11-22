@@ -3,7 +3,6 @@
 from setuptools import setup
 
 REQUIRES = ['Django <= 1.4',
-            #'python-fedora',
             'argparse',
             'bunch',
             'backports.ssl_match_hostname',
@@ -22,6 +21,13 @@ REQUIRES = ['Django <= 1.4',
             'six',
             'sqlalchemy >= 0.7',
             'urllib3']
+
+# Only install python-fedora if kitchen is available
+try:
+    import kitchen
+    REQUIRES.append("python-fedora")
+except:
+    pass
 
 setup(
     name='FAF',
