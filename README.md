@@ -1,4 +1,4 @@
 faf-openshift
 =============
 
-OpenShift cartridge for FAF
+OpenShift application providing FAF webUI
